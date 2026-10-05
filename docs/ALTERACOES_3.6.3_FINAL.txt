@@ -1,0 +1,20 @@
+CargaPrime 3.6.3 — revisão final após feedback de avaliação
+
+- Carrinho de visitante preservado após login/registo e retorno ao carrinho quando existe seleção pendente.
+- Documento de transporte revisto: itens recuperados separadamente e produto/fábrica/morada escapados individualmente na apresentação.
+- Removida a alegação fixa “+40 produtos”; contagem passa a refletir os produtos ativos reais da base de dados.
+- Criada página pública products.php para o catálogo completo, com pesquisa, filtros, ordenação por disponibilidade e paginação de 6 produtos por página.
+- Home limitada a 6 produtos em destaque e acesso “Ver todos os produtos”.
+- Filtros e paginação do catálogo com AJAX progressivo, URL atualizada e fallback por GET.
+- Produtos sem stock continuam visíveis, bloqueados para compra e apresentados depois dos produtos com stock.
+- sitemap.xml atualizado com products.php.
+- Mantidas as regras de compra mínima de 0,5 t, revalidação de stock, carrinhos isolados e controlo concorrente.
+- Removida linguagem que pudesse sugerir reserva de stock: o carrinho guarda seleção, mas a disponibilidade só é confirmada no checkout.
+- Corrigida semântica HTML apontada pelo W3C e preservado o layout responsivo.
+- Documentação SEO mantém os resultados já obtidos: Lighthouse (Performance 76, Accessibility 96, Best Practices 100 e SEO 100) e W3C com 0 erros e 0 avisos.
+- Relatório e briefing atualizados e sincronizados com o funcionamento real do projeto.
+- Análise crítica ampliada e adicionadas evidências da correção de escape e do catálogo dedicado.
+
+Validação final de paginação:
+- paginação validada em ambiente local com 7 produtos ativos temporários: a home manteve 6 itens, products.php gerou Página 1 e Página 2 e os controlos Anterior/Seguinte funcionaram; os dados temporários não integram o seed final.
+- auditoria final de coerência realizada entre código, SQL, briefing, relatório, README e imagens de evidência.

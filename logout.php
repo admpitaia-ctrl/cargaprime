@@ -1,0 +1,1 @@
+<?php require __DIR__ . '/includes/bootstrap.php'; unset($_SESSION['user'], $_SESSION['guest_cart'], $_SESSION['cart']); session_regenerate_id(true); flash('success','Sessão terminada.'); redirect('index.php');

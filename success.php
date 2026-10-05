@@ -1,0 +1,3 @@
+<?php require __DIR__ . '/includes/bootstrap.php'; $id=$_SESSION['last_order'] ?? null; if(!$id) redirect('index.php'); unset($_SESSION['last_order']); $pageTitle='Encomenda confirmada'; require __DIR__ . '/includes/header.php'; ?>
+<section class="success-page"><div class="success-icon">✓</div><p class="eyebrow">ENCOMENDA RECEBIDA</p><h1>Obrigado. Está tudo encaminhado.</h1><p>A encomenda <strong>#CP-<?= str_pad((string)$id,5,'0',STR_PAD_LEFT) ?></strong> foi registada com sucesso e o stock dos produtos foi descontado na base de dados. A equipa confirmará a data de recolha.</p><a class="button button-primary" href="<?= url('index.php') ?>">Voltar ao início</a></section>
+<?php require __DIR__ . '/includes/footer.php'; ?>

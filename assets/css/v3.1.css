@@ -1,0 +1,206 @@
+/* CargaPrime 3.1 — modernização preservando a identidade visual da versão 3.0. */
+:root{--cp-radius:18px;--cp-radius-small:12px;--cp-focus:0 0 0 4px rgba(243,122,34,.16)}
+button,.button,.cp3-button,.cp3-buy-row button{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease,opacity .22s ease}
+button:not(:disabled){cursor:pointer}
+.button,.cp3-button{border-radius:var(--cp-radius-small);border-width:1px;box-shadow:0 7px 18px rgba(7,24,44,.08)}
+.button:hover,.cp3-button:hover,.cp3-buy-row button:hover,.cp3-filters button:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(7,24,44,.16)}
+.button:active,.cp3-button:active,.cp3-buy-row button:active{transform:translateY(0) scale(.985)}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--cp3-orange);outline-offset:3px}
+.is-loading{position:relative;opacity:.72;pointer-events:none}
+.is-loading:after{content:"";width:14px;height:14px;margin-left:9px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:cp-spin .7s linear infinite}
+@keyframes cp-spin{to{transform:rotate(360deg)}}
+
+.cp3-product-search{margin:56px 0 18px;padding:22px 24px;display:grid;grid-template-columns:minmax(280px,650px) 1fr;align-items:end;gap:28px;border:1px solid rgba(7,24,44,.12);border-radius:22px;background:rgba(255,255,255,.75);box-shadow:0 16px 50px rgba(7,24,44,.06);backdrop-filter:blur(12px)}
+.cp3-product-search label>span{display:block;margin-bottom:9px;color:#53606c;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.cp3-product-search label>.cp3-search-field{height:54px;display:flex;align-items:center;border:1px solid #cfd2d0;border-radius:14px;background:#fff;transition:.2s}
+.cp3-product-search label>.cp3-search-field:focus-within{border-color:var(--cp3-orange);box-shadow:var(--cp-focus)}
+.cp3-product-search b{padding-left:17px;color:var(--cp3-orange);font-size:24px;font-weight:400}
+.cp3-product-search input{height:100%;border:0;border-radius:14px;background:transparent;font-size:15px}
+.cp3-product-search input:focus{outline:0}
+.cp3-product-search p{margin:0;color:#7a8287;font-size:12px;line-height:1.6}
+.cp3-cart-summary{margin:30px 0 22px;padding:18px 20px;display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:24px;border:1px solid rgba(7,24,44,.12);border-radius:18px;background:#fff;box-shadow:0 14px 40px rgba(7,24,44,.07)}
+.cp3-cart-summary small,.cp3-cart-summary strong{display:block}.cp3-cart-summary small{margin-bottom:4px;color:#7a8287;font-size:9px;font-weight:900;letter-spacing:.12em}.cp3-cart-summary strong{color:var(--cp3-navy);font-size:18px}.cp3-cart-summary a{min-height:46px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:22px;border-radius:12px;background:var(--cp3-orange);color:#fff;text-decoration:none;font-size:12px;font-weight:900}
+.cp3-filters{margin-top:0;border:0;align-items:center;gap:20px}
+.cp3-filters>div{display:flex;gap:8px;flex-wrap:wrap}
+.cp3-filters button{padding:10px 17px;border:1px solid #d3d4d1;border-radius:999px;background:rgba(255,255,255,.62)}
+.cp3-filters button.active{border-color:var(--cp3-navy);box-shadow:0 8px 18px rgba(7,24,44,.13)}
+.cp3-product{overflow:hidden;border:1px solid rgba(7,24,44,.09);border-radius:22px;box-shadow:0 15px 45px rgba(10,25,40,.07);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.cp3-product:hover{transform:translateY(-9px);border-color:rgba(243,122,34,.35);box-shadow:0 27px 62px rgba(10,25,40,.15)}
+.cp3-product[hidden]{display:none}
+.cp3-product-media:after{content:"";position:absolute;inset:-60%;background:linear-gradient(112deg,transparent 43%,rgba(255,255,255,.32) 50%,transparent 57%);transform:translateX(-45%);transition:transform .9s ease;pointer-events:none}
+.cp3-product-placeholder,.admin-image-placeholder{width:100%;height:100%;display:grid;place-items:center;align-content:center;gap:8px;background:linear-gradient(135deg,#d9dee0,#f2f0e9);color:#64717b}.cp3-product-placeholder b{font-size:64px;color:rgba(7,24,44,.22)}.cp3-product-placeholder span,.admin-image-placeholder{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.cp3-product:hover .cp3-product-media:after{transform:translateX(45%)}
+.cp3-stock,.cp3-category{border:1px solid rgba(7,24,44,.08);border-radius:999px;backdrop-filter:blur(9px)}
+.cp3-stock.is-out{background:#fff0ec;color:#8d2d20}.cp3-stock.is-out i{background:#c74a34}.cp3-product.is-out-of-stock .cp3-product-media img{filter:grayscale(.7);opacity:.72}.cp3-product.is-out-of-stock .cp3-buy-row label{background:#f1f1ee}.cp3-product.is-out-of-stock .cp3-buy-row button{background:#747c83}
+.cp3-category{position:absolute;z-index:1;left:14px;top:14px;padding:7px 10px;background:rgba(7,24,44,.82);color:#fff;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.cp3-buy-row label,.cp3-buy-row button{border-radius:12px}
+.cp3-buy-row label{transition:border-color .2s,box-shadow .2s}.cp3-buy-row label:focus-within{border-color:var(--cp3-orange);box-shadow:var(--cp-focus)}
+.cp3-buy-row button{border:1px solid rgba(255,255,255,.14)}
+.cp3-no-results{grid-column:1/-1;padding:55px 25px;border:1px dashed #c8c8c3;border-radius:20px;text-align:center;color:#69747e;background:rgba(255,255,255,.5)}
+.cp3-product-more-wrap{margin-top:34px;display:flex;justify-content:center}.cp3-product-more-wrap[hidden]{display:none}.cp3-product-more{min-width:170px;min-height:50px;padding:0 22px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border:1px solid rgba(7,24,44,.2);border-radius:999px;background:#fff;color:var(--cp3-navy);font-size:13px;font-weight:900;box-shadow:0 12px 30px rgba(7,24,44,.08);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease}.cp3-product-more:hover{transform:translateY(-3px);border-color:var(--cp3-orange);background:#fffaf6;box-shadow:0 18px 38px rgba(7,24,44,.14)}.cp3-product-more b{color:var(--cp3-orange);font-size:16px}
+
+.cp3-video{overflow:hidden;border:1px solid rgba(255,255,255,.2);border-left:5px solid rgba(243,122,34,.86);border-right:5px solid rgba(243,122,34,.86);border-radius:22px;box-shadow:0 38px 80px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.04);transition:transform .45s,box-shadow .45s,border-color .45s}
+.cp3-scene.active .cp3-video{transform:translateY(-4px);border-left-color:#f9954d;border-right-color:#f9954d;box-shadow:0 44px 90px rgba(0,0,0,.46),0 0 38px rgba(243,122,34,.09)}
+.cp3-video video{display:block}
+.cp3-video-sound,.cp3-hero-sound{z-index:6;display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(4,18,32,.8);color:#fff;font-size:10px;font-weight:900;backdrop-filter:blur(12px);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.cp3-video-sound{position:absolute;right:14px;top:14px}
+.cp3-hero-sound{position:absolute;right:clamp(24px,6vw,90px);top:105px}
+.cp3-video-sound[aria-pressed="true"],.cp3-hero-sound[aria-pressed="true"]{border-color:var(--cp3-orange);background:rgba(243,122,34,.9)}
+.cp3-video-sound:hover,.cp3-hero-sound:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.36)}
+
+.ajax-toast{position:fixed;z-index:300;right:24px;bottom:24px;max-width:min(420px,calc(100vw - 32px));padding:14px 18px;border:1px solid rgba(47,168,102,.35);border-radius:14px;background:#edf9f1;color:#17643c;font-weight:800;box-shadow:0 22px 60px rgba(7,24,44,.22);opacity:0;transform:translateY(20px);pointer-events:none;transition:.28s}
+.ajax-toast.is-visible{opacity:1;transform:none}.ajax-toast.is-error{border-color:#dca79b;background:#fff0ec;color:#8d2d20}
+.save-feedback{display:block;min-height:18px;margin-top:7px;color:#2b8d59;font-size:11px;font-weight:800}.auth-card>.save-feedback{text-align:center}
+.cart-row{border-radius:15px;transition:background .25s,transform .25s}.cart-row:hover{background:#fafaf7}.cart-actions .link-button{min-height:43px;padding:0 12px;border:1px solid rgba(154,63,47,.26);border-radius:10px;text-decoration:none}.cart-actions .save-feedback{grid-column:1/-1}
+
+/* O cabeçalho da versão 3 é fixo. Nas páginas internas, reservamos a sua
+   altura para que o resumo e os destinos do menu não fiquem escondidos. */
+.admin-shell{margin-top:76px}
+#resumo,#encomendas,#produtos-admin{scroll-margin-top:100px}
+@media(min-width:980px){.admin-side{top:76px;height:calc(100vh - 76px)}}
+
+.admin-products-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:28px}.admin-products-heading h2{margin-bottom:8px}.admin-products-heading p:last-child{margin:0;color:var(--muted)}
+.admin-product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.admin-product-card{overflow:hidden;display:grid;grid-template-columns:180px 1fr;border:1px solid rgba(7,24,44,.1);border-radius:20px;background:#fff;box-shadow:0 16px 42px rgba(7,24,44,.08);transition:transform .3s,box-shadow .3s,border-color .3s}
+.admin-product-card:hover{transform:translateY(-5px);border-color:rgba(243,122,34,.35);box-shadow:0 24px 52px rgba(7,24,44,.14)}
+.admin-product-card.is-inactive{opacity:.64}.admin-product-image{min-height:210px;position:relative;overflow:hidden;background:#e8e8e3}.admin-product-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.admin-product-card:hover img{transform:scale(1.04)}
+.admin-product-image span{position:absolute;left:10px;top:10px;padding:6px 9px;border-radius:999px;background:rgba(7,24,44,.84);color:#fff;font-size:8px;font-weight:900;text-transform:uppercase}
+.admin-product-info{padding:20px;display:flex;flex-direction:column;align-items:flex-start}.admin-product-info small{color:#8a9297;font-size:9px;letter-spacing:.08em}.admin-product-info h3{margin:7px 0;font-size:22px}.admin-product-info>p{display:-webkit-box;overflow:hidden;color:#69747e;font-size:12px;-webkit-line-clamp:2;-webkit-box-orient:vertical}.admin-product-info>div{width:100%;margin:auto 0 14px;display:flex;justify-content:space-between;gap:12px}.admin-product-info>div span{color:#69747e;font-size:11px}.admin-product-info .button{min-height:38px;font-size:12px}
+.product-dialog{width:min(760px,calc(100vw - 28px));max-height:90vh;padding:0;border:0;border-radius:24px;background:#f7f6f1;box-shadow:0 45px 110px rgba(0,0,0,.38)}.product-dialog::backdrop{background:rgba(2,12,23,.72);backdrop-filter:blur(5px)}
+.product-editor{padding:28px}.dialog-heading{display:flex;align-items:start;justify-content:space-between;gap:20px}.dialog-heading h2{margin:0;font-size:34px}.dialog-close{width:42px;height:42px;border:1px solid #d5d7d3;border-radius:50%;background:#fff;color:#172433;font-size:25px}.dialog-close:hover{transform:rotate(5deg);border-color:var(--cp3-orange)}
+.image-editor{min-height:150px;padding:14px;display:grid;grid-template-columns:150px 1fr;align-items:center;gap:18px;border:1px dashed #bcc2bf;border-radius:16px;background:#fff}.image-editor img,.image-placeholder{width:150px;height:120px;border-radius:12px;object-fit:cover;background:#e8ebe8}.image-placeholder{display:grid;place-items:center;padding:15px;color:#7b8580;text-align:center;font-size:12px}.image-editor input{margin-top:8px}.image-editor small{display:block;margin-top:6px;color:#7b8580}
+
+input,textarea,select{transition:border-color .2s,box-shadow .2s}input:focus,textarea:focus,select:focus{border-color:var(--cp3-orange);box-shadow:var(--cp-focus);outline:0}
+@media(max-width:1100px){.admin-product-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.cp3-product-search{grid-template-columns:1fr;margin-top:35px}.cp3-product-search p{display:none}.cp3-cart-summary{grid-template-columns:1fr 1fr;gap:16px}.cp3-cart-summary a{grid-column:1/-1}.cp3-filters{align-items:flex-start}.cp3-filters>div{flex-wrap:nowrap;overflow:auto;padding-bottom:8px}.cp3-filters button{white-space:nowrap}.cp3-video{width:100%;margin-left:0;border-left-width:3px;border-right-width:3px;border-radius:16px}.cp3-video-sound span{display:none}.cp3-hero-sound{top:82px;right:18px}.admin-shell{margin-top:66px}#resumo,#encomendas,#produtos-admin{scroll-margin-top:90px}.admin-products-heading{align-items:stretch;flex-direction:column}.admin-product-card{grid-template-columns:120px 1fr}.admin-product-image{min-height:220px}.admin-product-info>div{flex-direction:column}.product-editor{padding:20px}.image-editor{grid-template-columns:1fr}.ajax-toast{right:16px;bottom:16px}}
+@media(prefers-reduced-motion:reduce){button,.button,.cp3-product,.cp3-video,.admin-product-card,.ajax-toast,.cp3-product-more{transition:none!important}.is-loading:after{animation:none}}
+
+/* ========================================================================
+   CARGAPRIME 3.6.3 — CATÁLOGO DE E-COMMERCE
+   Mantém a identidade visual existente e acrescenta apenas os componentes
+   necessários para catálogo dedicado, filtros e paginação.
+   ======================================================================== */
+.cp3-catalog-page{margin-top:76px;min-height:calc(100vh - 76px)}
+.cp3-catalog-overview{margin:28px 0 22px;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px;border:1px solid rgba(7,24,44,.12);border-radius:18px;background:#fff;box-shadow:0 14px 40px rgba(7,24,44,.07)}
+.cp3-catalog-overview small,.cp3-catalog-overview strong,.cp3-catalog-overview span{display:block}.cp3-catalog-overview small{margin-bottom:5px;color:#7a8287;font-size:9px;font-weight:900;letter-spacing:.12em}.cp3-catalog-overview strong{font-size:22px;color:var(--cp3-navy)}.cp3-catalog-overview span{margin-top:4px;color:#66717a;font-size:12px}
+.cp3-catalog-search{grid-template-columns:minmax(280px,1fr) auto;align-items:end}
+.cp3-catalog-search-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px}.cp3-catalog-search-actions .cp3-button{width:auto;min-width:130px;margin:0}
+.cp3-ghost-dark{border:1px solid rgba(7,24,44,.2);background:#fff;color:var(--cp3-navy)}
+.cp3-catalog-filter-group{margin:16px 0;display:grid;grid-template-columns:130px minmax(0,1fr);align-items:start;gap:18px}.cp3-catalog-filter-group>strong{padding-top:10px;color:#58646d;font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+.cp3-filter-pills{display:flex;gap:8px;flex-wrap:wrap}.cp3-filter-pills a{padding:10px 17px;border:1px solid #d3d4d1;border-radius:999px;background:rgba(255,255,255,.72);color:#68727a;text-decoration:none;font-size:12px;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease}.cp3-filter-pills a:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(7,24,44,.12)}.cp3-filter-pills a.active{border-color:var(--cp3-navy);background:var(--cp3-navy);color:#fff;box-shadow:0 8px 18px rgba(7,24,44,.13)}
+.cp3-catalog-results{margin:26px 0 22px;padding:14px 0;display:flex;justify-content:space-between;gap:20px;border-top:1px solid #d3cfc6;border-bottom:1px solid #d3cfc6;color:#747d83;font-size:11px}.cp3-catalog-results span:last-child{text-align:right}
+.cp3-pagination{margin-top:44px;display:flex;align-items:center;justify-content:center;gap:18px}.cp3-page-link,.cp3-page-number{min-height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(7,24,44,.18);border-radius:11px;background:#fff;color:var(--cp3-navy);text-decoration:none;font-size:12px;font-weight:900;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.cp3-page-link{padding:0 16px}.cp3-page-numbers{display:flex;gap:7px}.cp3-page-number{width:42px}.cp3-page-link:hover,.cp3-page-number:hover{transform:translateY(-2px);border-color:var(--cp3-orange);box-shadow:0 10px 22px rgba(7,24,44,.1)}.cp3-page-number.active{border-color:var(--cp3-orange);background:var(--cp3-orange);color:#fff}.cp3-page-link.is-disabled{opacity:.38;cursor:not-allowed}
+.cp3-catalog-cta{margin-top:34px;padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid rgba(7,24,44,.1);border-radius:18px;background:#fff}.cp3-catalog-cta p{margin:0;color:#68727a}.cp3-catalog-cta .cp3-button{width:auto;margin:0}
+
+@media(max-width:760px){.cp3-catalog-page{margin-top:66px}.cp3-catalog-overview,.cp3-catalog-cta{align-items:stretch;flex-direction:column}.cp3-catalog-overview .cp3-button,.cp3-catalog-cta .cp3-button{width:100%}.cp3-catalog-search{grid-template-columns:1fr}.cp3-catalog-search-actions{justify-content:stretch;flex-direction:column}.cp3-catalog-search-actions .cp3-button{width:100%}.cp3-catalog-filter-group{grid-template-columns:1fr;gap:8px}.cp3-filter-pills{flex-wrap:nowrap;overflow-x:auto;padding-bottom:7px}.cp3-filter-pills a{white-space:nowrap}.cp3-catalog-results{align-items:flex-start;flex-direction:column}.cp3-catalog-results span:last-child{text-align:left}.cp3-pagination{gap:8px;flex-wrap:wrap}.cp3-page-numbers{order:3;width:100%;justify-content:center}.cp3-page-link{padding:0 12px}}
+.cp3-catalog-page .cp3-section-head h1{margin:0;font-size:clamp(42px,5vw,72px);line-height:1;letter-spacing:-.055em}
+@media(max-width:900px) and (min-width:641px){.cp3-products .cp3-product:nth-child(even):last-child{grid-column:auto;width:auto}}
+@media(max-width:640px){.cp3-catalog-page .cp3-section-head h1{font-size:42px}}
+
+/* ========================================================================
+   3.6.3 — PERCURSO RESPONSIVO
+   Preserva a composição original: marcador alinhado à linha e texto afastado.
+   Em ecrãs mais estreitos, a rail desaparece para evitar compressão.
+   ======================================================================== */
+.cp3-rail button{position:relative}
+.cp3-rail button>span:first-child{
+  position:absolute;
+  left:-38px;
+  top:50%;
+  transform:translateY(-50%);
+  width:28px;
+  height:28px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid #526174;
+  background:var(--cp3-navy);
+  font-size:9px;
+  line-height:1;
+}
+.cp3-rail button>.cp3-rail-copy{
+  position:static;
+  grid-column:2;
+  width:auto;
+  height:auto;
+  margin:0;
+  display:block;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  font-size:inherit;
+  line-height:1.25;
+}
+.cp3-rail button.active>span:first-child{background:var(--cp3-orange);border-color:var(--cp3-orange)}
+.cp3-rail button.done>span:first-child{background:#2e9f63;border-color:#2e9f63;color:#fff}
+
+/* Ajuste intermédio: mantém a rail proporcional antes de entrar no modo compacto. */
+@media(max-width:1100px) and (min-width:901px){
+  .cp3-journey-layout{grid-template-columns:210px minmax(0,1fr);gap:48px}
+  .cp3-rail{padding-left:38px}
+}
+
+/* Tablet / janela estreita: usa o percurso em coluna, sem apertar marcador e texto. */
+@media(max-width:900px){
+  .cp3-journey{padding-left:28px;padding-right:28px}
+  .cp3-journey-head{margin-left:0}
+  .cp3-journey-layout{display:block;margin-top:60px}
+  .cp3-rail{display:none}
+  .cp3-scene{min-height:auto;padding:60px 0 90px 24px;position:relative;opacity:.55}
+  .cp3-scene:before{content:"";position:absolute;left:0;top:65px;bottom:0;width:1px;background:rgba(255,255,255,.17)}
+  .cp3-scene.active:before{background:var(--cp3-orange)}
+  .cp3-scene.active{opacity:1}
+  .cp3-video{width:100%;margin-left:0}
+}
+
+/* Feedback discreto durante atualizações AJAX do catálogo. */
+.cp3-catalog-page.is-catalog-loading{position:relative}
+.cp3-catalog-page.is-catalog-loading:after{content:"A atualizar catálogo…";position:fixed;z-index:250;right:24px;bottom:24px;padding:11px 15px;border:1px solid rgba(7,24,44,.12);border-radius:12px;background:rgba(255,255,255,.96);color:var(--cp3-navy);font-size:11px;font-weight:900;box-shadow:0 16px 42px rgba(7,24,44,.18)}
+.cp3-catalog-page.is-catalog-loading .cp3-products,.cp3-catalog-page.is-catalog-loading .cp3-catalog-results,.cp3-catalog-page.is-catalog-loading .cp3-pagination{opacity:.58;transition:opacity .18s ease}
+
+/* ========================================================================
+   3.6.3 — AJUSTE FINAL DO PERCURSO
+   Mantém a linguagem visual CargaPrime: fundo navy, detalhe lateral laranja,
+   espaçamento interno e estados discretos. Impede que o estado ativo aplique
+   o fundo laranja do marcador ao bloco de texto.
+   ======================================================================== */
+.cp3-rail button>.cp3-rail-copy{
+  min-width:152px;
+  padding:10px 14px 10px 16px;
+  margin-left:10px;
+  border-left:2px solid transparent;
+  border-right:2px solid transparent;
+  background:transparent;
+  color:inherit;
+  transition:background-color .22s ease,border-color .22s ease,color .22s ease,transform .22s ease;
+}
+.cp3-rail button.active>.cp3-rail-copy{
+  background:rgba(3,20,38,.62);
+  border-left-color:var(--cp3-orange);
+  border-right-color:rgba(243,122,34,.38);
+  color:#fff;
+  transform:translateX(2px);
+}
+.cp3-rail button.done>.cp3-rail-copy{
+  background:rgba(3,20,38,.32);
+  border-left-color:rgba(65,203,121,.72);
+  border-right-color:rgba(65,203,121,.20);
+  color:#91a2b4;
+}
+.cp3-rail button>.cp3-rail-copy small{
+  margin-bottom:5px;
+  color:inherit;
+  opacity:.76;
+}
+.cp3-rail button>.cp3-rail-copy strong{
+  color:inherit;
+  line-height:1.25;
+}
+
+@media(max-width:1100px) and (min-width:901px){
+  .cp3-rail button>.cp3-rail-copy{
+    min-width:138px;
+    padding:9px 11px 9px 13px;
+    margin-left:7px;
+  }
+}
